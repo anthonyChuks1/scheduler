@@ -82,4 +82,12 @@ export default {
       });
     }
   }),
+  delete: jest.fn((url) => {
+    if (url.startsWith("/api/appointments/")) {
+      return Promise.resolve({
+        status: 200,
+        statusText: "Deleted Content",
+      });
+    }
+  }),
 };
